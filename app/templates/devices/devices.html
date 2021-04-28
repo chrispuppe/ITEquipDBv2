@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}All Devices{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+    <div role="content">
+        <h2 class="sub-header">All Devices</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Device Name</th>
+                        <th>Device Type</th>
+                        <th>User</th>
+                        <th>Trade</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+    {% for post in post %}
+
+                    <tr>
+                        <td><a href="{{ url_for('phone_edit', id=post.id) }}">{{ post.phone_number }}</a></td>
+                        <td>{{ post.computer_name }}</td>
+                            {% for employee in employees %}
+                                {% if employee.id == post.assigned_to %}
+                                <td>{{ employee.name }}</td>
+                                <td>{{ employee.trade }}</td>
+                                {% endif %}
+                            {% endfor %}
+
+                        <td><a href="{{ url_for('phone_delete', id=post.id) }}">Delete</a></td>
+                    </tr>
+         
+
+    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block title %}All Printers{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+    <div role="content">
+        <div class="btn-group pull-right" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                <a role="button" class="btn btn-success" href="/devices/printer_add">Add New Printer</a>
+            </div>
+        </div>
+        <h2 class="sub-header">All Printers</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Serial</th>
+                        <th>Model</th>
+                        <th>Brand</th>
+                        <th>Vendor</th>
+                        <th>User</th>
+                        <th>Trade</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+    {% for post in post %}
+
+                    <tr>
+                        <td><a href="{{ url_for('printer_edit', id=post.id) }}">{{ post.serial }}</a></td>
+                        <td>{{ post.model }}</td>
+                        <td>{{ post.brand }}</td>
+                        <td>{{ post.vendor_id }}</td>
+                            {% for employee in employees %}
+                                {% if employee.id == post.assigned_to %}
+                                <td>{{ employee.name }}</td>
+                                <td>{{ employee.trade }}</td>
+                                {% endif %}
+                            {% endfor %}
+
+                        <td><a href="{{ url_for('printer_delete', id=post.id) }}">Delete</a></td>
+                    </tr>
+         
+
+    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

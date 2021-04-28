@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% block title %}Edit Printer{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+    <form action="/devices/printer_edit/{{ post.id }}" method="POST">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="{{ url_for('printer_delete', id=post.id) }}">Delete</a>
+                <label>ID: {{ post.id }}</label>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <label>Brand:</label>
+                </div>
+                <input type="text" name="brand" value="{{ post.brand }}"></p>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <label>Model:</label>
+                </div>
+                <input type="text" name="model" value="{{ post.model }}"/></p>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <label>Printer Type:</label>
+                </div>
+                <select type="text" name="printer_type"></p>
+                    <option {% if post.printer_type == "Ink"%}{{'selected="selected"' }}{% endif %} value="Ink">Ink</option>
+                    <option {% if post.printer_type == "Toner"%}{{'selected="selected"' }}{% endif %} value="Toner">Toner</option>
+                    <option {% if post.printer_type == "Other"%}{{'selected="selected"' }}{% endif %} value="Other">Other</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <label>Serial:</label>
+                </div>
+                <input type="text" name="serial" value="{{ post.serial }}"/></p>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <label>Purchase Date:</label>
+                </div>
+                <div style="width:200px;" role="button" class="input-group date" data-provide="datepicker">
+                    <input type="text" name="aquired_date" class="form-control" value="{{ post.aquired_date.strftime('%m/%d/%Y') }}" %}>
+                    <div class="input-group-addon">
+                        <span  class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <label>Vendor:</label>
+                </div>
+                <input type="text" name="vendor_id" value="{{ post.vendor_id }}"/></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <label>Assigned To:</label>
+                </div>
+                <select type="text" name="assigned_to"></p>
+
+                {% for employee in employee_list %}
+
+                    <option {% if employee.id == post.assigned_to %}{{'selected="selected"' }}{% endif %} value="{{ employee.id }}">{{ employee.name }}</option>
+
+                {% endfor %}
+
+                </select>
+            </div>
+        </div>
+        </p><button class="button postfix" type="submit">Finish</button>
+    </form>
+{% endblock %}
+{% block footer %}
+<script src="/static/js/jquery-3.1.1.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/bootstrap-datepicker.js"></script>
+<script>
+    $('.input-group.date').datepicker({
+        format: "mm/dd/yyyy",
+        autoclose: true,
+        todayHighlight: true
+    });
+</script>
+{% endblock %}

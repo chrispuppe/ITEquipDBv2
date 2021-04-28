@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block title %}All iPads{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+    <div role="content">
+        <div class="btn-group pull-right" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                <a role="button" class="btn btn-success" href="/devices/ipad_add">Add New iPad</a>
+            </div>
+        </div>
+        <h2 class="sub-header">All iPads</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Serial</th>
+                        <th>Model</th>
+                        <th>Storage Capacity</th>
+                        <th>User</th>
+                        <th>Trade</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+    {% for post in post %}
+
+                    <tr>
+                        <td><a href="{{ url_for('ipad_edit', id=post.id) }}">{{ post.serial }}</a></td>
+                        <td>{{ post.model }}</td>
+                        <td>{{ post.storage_capacity }}</td>
+                            {% for employee in employees %}
+                                {% if employee.id == post.assigned_to %}
+                                <td>{{ employee.name }}</td>
+                                <td>{{ employee.trade }}</td>
+                                {% endif %}
+                            {% endfor %}
+
+                        <td><a href="{{ url_for('phone_delete', id=post.id) }}">Delete</a></td>
+                    </tr>
+         
+
+    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

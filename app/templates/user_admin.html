@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block title %}All Users{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+    <div role="content">
+        <div class="btn-group pull-right" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                <a role="button" class="btn btn-success" href="/add_user">Add New User</a>
+            </div>
+        </div>
+        <h2 class="sub-header">All Users</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th></th>
+                </thead>
+                <tbody>
+
+    {% for user in users %}
+
+                    <tr>
+                        <td><a href="{{ url_for('user_edit', id=user.id) }}">{{ user.username }}</a></td>
+                        <td>{{ user.email }}</td>
+                            
+
+                        <td><a href="{{ url_for('user_delete', id=user.id) }}">Delete</a></td>
+                    </tr>
+         
+
+    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

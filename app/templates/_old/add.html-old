@@ -1,0 +1,52 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit</title>
+    <link rel="stylesheet" href="/static/css/foundation.css" />
+    <script src="/static/js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    <form action="" method="post">
+        <div class="row">
+            <div class="large-12 columns">
+                <label>Name:</label>
+                <textarea type="text" name="name_form"></textarea>
+            </div>
+        </div>
+         <div class="row">
+            <div class="large-12 columns">
+                <label>Skill Level:</label>
+        <input type="number" name="skill_level_form"/> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <label>Email:</label>
+        <input type="text" name="email_address_form"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <label>Trade:</label>
+        <select type="text" name="trade_form">
+        	<option value="Accounting">Accounting</option>
+        	<option value="CAD">CAD</option>
+        	<option value="Estimating">Estimating</option>
+        	<option value="PM">PM</option>
+        	<option value="Piping Plumbing">Piping Plumbing</option>
+        	<option value="Sheet Metal">Sheet Metal</option>
+            <option value="Safety">Safety</option>
+            <option value="Shop">Shop</option>
+        </select>
+
+        <button class="button postfix"  type="submit">Add</button>
+    </form>
+    <script src="/static/js/vendor/jquery.js"></script>
+    <script src="/static/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>

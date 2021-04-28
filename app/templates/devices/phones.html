@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block title %}All Phones{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+    <div role="content">
+        <div class="btn-group pull-right" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                <a role="button" class="btn btn-success" href="/devices/phone_add">Add New Phone</a>
+            </div>
+        </div>
+        <h2 class="sub-header">All Phones</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Phone Number</th>
+                        <th>Phone Type</th>
+                        <th>User</th>
+                        <th>Trade</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+    {% for post in post %}
+
+                    <tr>
+                        <td><a href="{{ url_for('phone_edit', id=post.id) }}">{{ post.phone_number }}</a></td>
+                        <td>{{ post.phone_os }}</td>
+                            {% for employee in employees %}
+                                {% if employee.id == post.assigned_to %}
+                                <td>{{ employee.name }}</td>
+                                <td>{{ employee.trade }}</td>
+                                {% endif %}
+                            {% endfor %}
+
+                        <td><a href="{{ url_for('phone_delete', id=post.id) }}">Delete</a></td>
+                    </tr>
+         
+
+    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

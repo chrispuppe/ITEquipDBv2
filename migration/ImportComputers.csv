@@ -1,0 +1,5 @@
+computer_name,brand,model,serial,computer_type,operating_system,notes,retired,disposed,disposed_date,aquired_date,purchase_price,vendor_id,warranty_length,employee_id,history,assigned_to
+HQWS7,Custom,Custom,NA,Desktop,XP Pro,Chris' Office,,,,2006-02-23,,,,,,_Spare
+HQLT11,Dell,Prec M4300,4QBSGH1,Laptop,Vista Business,Jim De John - old,,,,2008-10-09,,,,,,_Spare
+RMLT16,Dell,Latitude D830,7RMTMG1,Laptop,XP Pro,Keep XP,,,,2008-06-25,,,,,,Sean Brown
+HQLT26,Dell,M6400,5033JJ1,Laptop,Win 7 x64,Video heat issue - formerly at JHA,,,,2009-03-11,,,,,,_Spare

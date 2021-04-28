@@ -1,0 +1,75 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit</title>
+    <link rel="stylesheet" href="/static/css/foundation.css" />
+    <script src="/static/js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    <form action="/employee/edit/{{ post.id }}" method="POST">
+      <div class="row">
+        <div class="large-12 columns">
+          <label>ID: {{ post.id }}
+          </label>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <label>Name:
+            <textarea type="text" name="name_form">{{ post.name }}</textarea>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <label>Time Stamp: {{ post.create_ts }}
+          </label> 
+        </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <label>Skill Level:
+            <textarea type="number" name="skill_level_form">{{ post.skill_level }}</textarea>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <label>Email:
+            <textarea type="text" name="email_address_form">{{ post.email_address }}</textarea>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <label>Trade:
+            <select type="text" name="trade_form">
+              <option {% if post.trade == "Accounting"%}{{'selected="selected"' }}{% endif %}value="Accounting">Accounting</option>
+              <option {% if post.trade == "CAD"%}{{'selected="selected"' }}{% endif %}value="CAD">CAD</option>
+              <option {% if post.trade == "Estimating"%}{{'selected="selected"' }}{% endif %}value="Estimating">Estimating</option>
+              <option {% if post.trade == "PM"%}{{'selected="selected"' }}{% endif %}value="PM">PM</option>
+              <option {% if post.trade == "Piping Plumbing"%}{{'selected="selected"' }}{% endif %}value="Piping Plumbing">Piping Plumbing</option>
+              <option {% if post.trade == "Sheet Metal"%}{{'selected="selected"' }}{% endif %}value="Sheet Metal">Sheet Metal</option>
+              <option {% if post.trade == "Safety"%}{{'selected="selected"' }}{% endif %}value="Safety">Safety</option>
+              <option {% if post.trade == "Shop"%}{{'selected="selected"' }}{% endif %}value="Shop">Shop</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <button class="button postfix" type="submit">Finish</button>
+        </div>
+      </div>
+    </form>
+    <script src="/static/js/vendor/jquery.js"></script>
+    <script src="/static/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>

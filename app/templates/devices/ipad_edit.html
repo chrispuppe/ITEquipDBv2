@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block title %}Edit iPad{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+    <form action="/devices/ipad_edit/{{ post.id }}" method="POST">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="{{ url_for('phone_delete', id=post.id) }}">Delete</a>
+                <label>ID: {{ post.id }}</label>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <label>Serial:</label>
+                </div>
+                <input type="text" name="serial" value="{{ post.serial }}"></p>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <label>Model:</label>
+                </div>
+                <select type="text" name="model"></p>
+                    <option {% if post.model == "iPad 2"%}{{'selected="selected"' }}{% endif %} value="iPad 2">iPad 2</option>
+                    <option {% if post.model == "iPad Air"%}{{'selected="selected"' }}{% endif %} value="iPad Air">iPad Air</option>
+                    <option {% if post.model == "iPad Air 2"%}{{'selected="selected"' }}{% endif %} value="iPad Air 2">iPad Air 2</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <label>Storage Capacity:</label>
+                </div>
+                <select type="text" name="storage_capacity"></p>
+                    <option {% if post.storage_capacity == "16 GB"%}{{'selected="selected"' }}{% endif %} value="16 GB">16 GB</option>
+                    <option {% if post.storage_capacity == "32 GB"%}{{'selected="selected"' }}{% endif %} value="32 GB">32 GB</option>
+                    <option {% if post.storage_capacity == "64 GB"%}{{'selected="selected"' }}{% endif %} value="64 GB">64 GB</option>
+                    <option {% if post.storage_capacity == "128 GB"%}{{'selected="selected"' }}{% endif %} value="128 GB">128 GB</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <label>Purchase Date:</label>
+                </div>
+                <div style="width:200px;" role="button" class="input-group date" data-provide="datepicker">
+                    <input type="text" name="date_purchased" class="form-control" value="{{ post.date_purchased.strftime('%m/%d/%Y') }}" %}>
+                    <div class="input-group-addon">
+                        <span  class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <label>Assigned To:</label>
+                </div>
+                <select type="text" name="assigned_to"></p>
+
+                {% for employee in employee_list %}
+
+                    <option {% if employee.id == post.assigned_to %}{{'selected="selected"' }}{% endif %} value="{{ employee.id }}">{{ employee.name }}</option>
+
+                {% endfor %}
+
+                </select>
+            </div>
+        </div>
+        </p><button class="button postfix" type="submit">Finish</button>
+    </form>
+{% endblock %}
+{% block footer %}
+<script src="/static/js/jquery-3.1.1.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/bootstrap-datepicker.js"></script>
+<script>
+    $('.input-group.date').datepicker({
+        format: "mm/dd/yyyy",
+        autoclose: true,
+        todayHighlight: true
+    });
+</script>
+{% endblock %}

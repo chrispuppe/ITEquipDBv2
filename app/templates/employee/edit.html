@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+		<form action="/employee/edit/{{ post.id }}" method="POST">
+			<div class="row">
+				<div class="col-md-4">
+					<a href="{{ url_for('delete_employee', id=post.id) }}">Delete</a>
+					<label>ID: {{ post.id }}</label>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div>
+						<label>Name:</label>
+					</div>
+					<input type="text" name="name_form" value="{{ post.name }}"></p>
+				</div>
+			
+				<div class="col-md-4">
+					<div>
+						<label>Time Stamp: </label>
+					</div>
+					{{ post.create_ts }}</p>
+				
+				</div>
+				<div class="col-md-4">
+					<div>
+						<label>Skill Level:</label>
+					</div>
+						<input type="number" name="skill_level_form" value="{{ post.skill_level }}"></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div>
+						<label>Email:</label>
+					</div>
+						<input type="text" name="email_address_form" value="{{ post.email_address }}"></p>
+				</div>
+				<div class="col-md-4">
+					<div>
+						<label>Trade:</label>
+					</div>
+					<select type="text" name="trade_form">
+						<option {% if post.trade == "Accounting"%}{{'selected="selected"' }}{% endif %}value="Accounting">Accounting</option>
+						<option {% if post.trade == "CAD"%}{{'selected="selected"' }}{% endif %}value="CAD">CAD</option>
+						<option {% if post.trade == "Estimating"%}{{'selected="selected"' }}{% endif %}value="Estimating">Estimating</option>
+						<option {% if post.trade == "Marketing"%}{{'selected="selected"' }}{% endif %}value="Marketing">Marketing</option>
+						<option {% if post.trade == "Office"%}{{'selected="selected"' }}{% endif %}value="Office">Office</option>
+						<option {% if post.trade == "Piping Plumbing"%}{{'selected="selected"' }}{% endif %}value="Piping Plumbing">Piping Plumbing</option>
+						<option {% if post.trade == "PM"%}{{'selected="selected"' }}{% endif %}value="PM">PM</option>
+						<option {% if post.trade == "Safety"%}{{'selected="selected"' }}{% endif %}value="Safety">Safety</option>
+						<option {% if post.trade == "Sheet Metal"%}{{'selected="selected"' }}{% endif %}value="Sheet Metal">Sheet Metal</option>
+						<option {% if post.trade == "Shop"%}{{'selected="selected"' }}{% endif %}value="Shop">Shop</option>
+						<option {% if post.trade == "Service"%}{{'selected="selected"' }}{% endif %}value="Service">Service</option>
+					</select></p>
+				</div>
+				<div class="col-md-4">
+					<div>
+						<label>Inactive:</label>
+					</div>
+					<input type="checkbox" name="inactive" value="inactive" {% if post.inactive == 1%}{{'checked="checked"' }}{% endif %}>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<button class="button postfix" type="submit">Finish</button>
+				</div>
+			</div>
+		</form>
+{% endblock %}

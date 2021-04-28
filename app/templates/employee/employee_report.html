@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+{% block title %}User Report{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+    <div role="content">
+        {% if error %}
+            <div class="alert alert-danger" role="alert">
+                <p><strong>Error:</strong> {{ error }}
+            </div>
+        {% endif %}
+        <div class="btn-group pull-right" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                <a role="button" class="btn btn-success" href="{{ url_for('employee_report_pdf', id=employee.id) }}">PDF</a>
+            </div>
+        </div>
+        <h2 class="sub-header">User Report for {{ employee.name }}</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Computer(s) Assigned</th>
+                        <th>Type</th>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Serial</th>
+                        <th>OS</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+    {% for computer in assigned_computers %}
+                    {% if employee.id == computer.assigned_to %}
+                    <tr>
+                        <td><a href="{{ url_for('computer_edit', id=computer.id) }}">{{ computer.computer_name }}</a></td>
+                        <td>{{ computer.computer_type }}</td>
+                        <td>{{ computer.brand }}</td>
+                        <td>{{ computer.model }}</td>
+                        <td>{{ computer.serial }}</td>
+                        <td>{{ computer.operating_system }}</td>
+                    </tr>
+                    {% endif %}
+
+    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Phone Number</th>
+                        <th>Phone Type</th>
+                        <th>Model</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+    {% for phone in assigned_phones %}
+                    {% if employee.id == phone.assigned_to %}
+                    <tr>
+                        <td><a href="{{ url_for('phone_edit', id=phone.id) }}">{{ phone.phone_number }}</a></td>
+                        <td>{{ phone.phone_os }}</td>
+                        <td>{{ phone.phone_model }}</td>
+                    </tr>
+                    {% endif %}
+    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>FOB Number(s)</th>
+                        <th>Serial</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+
+    {% for fob in assigned_fobs %}
+                    {% if employee.id == fob.assigned_to %}
+                    <tr>
+                        <td><a href="{{ url_for('fob_edit', id=fob.id) }}">{{ fob.fob_number }}</a></td>
+                        <td>{{ fob.fob_serial }}</td>
+                    </tr>
+                    {% endif %}
+
+    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>iPad Serial(s)</th>
+                        <th>Model</th>
+                        <th>Storage Capacity</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+    {% for ipad in assigned_ipads %}
+                    {% if employee.id == ipad.assigned_to %}
+                    <tr>
+                        <td><a href="{{ url_for('ipad_edit', id=ipad.id) }}">{{ ipad.serial }}</a></td>
+                        <td>{{ ipad.model }}</td>
+                        <td>{{ ipad.storage_capacity }}</td>
+                    {% endif %}
+                    </tr>
+         
+
+    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Printer Serial(s)</th>
+                        <th>Model</th>
+                        <th>Brand</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+    {% for printer in assigned_printers %}
+                    {% if employee.id == printer.assigned_to %}
+                    <tr>
+                        <td><a href="{{ url_for('printer_edit', id=printer.id) }}">{{ printer.serial }}</a></td>
+                        <td>{{ printer.model }}</td>
+                        <td>{{ printer.brand }}</td>
+                    {% endif %}
+                    </tr>
+         
+
+    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

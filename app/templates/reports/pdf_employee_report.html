@@ -1,0 +1,151 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <title>Report</title>
+        
+    </head>
+    <div role="content">
+        <h2 class="sub-header">User Report for {{ employee.name }}</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Computer(s) Assigned</th>
+                        <th>Type</th>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Serial</th>
+                        <th>OS</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+    {% for computer in assigned_computers %}
+                    {% if employee.id == computer.assigned_to %}
+                    <tr>
+                        <td>{{ computer.computer_name }}</td>
+                        <td>{{ computer.computer_type }}</td>
+                        <td>{{ computer.brand }}</td>
+                        <td>{{ computer.model }}</td>
+                        <td>{{ computer.serial }}</td>
+                        <td>{{ computer.operating_system }}</td>
+                    </tr>
+                    {% endif %}
+
+    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Phone Number</th>
+                        <th>Phone Type</th>
+                        <th>Model</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+    {% for phone in assigned_phones %}
+                    {% if employee.id == phone.assigned_to %}
+                    <tr>
+                        <td>{{ phone.phone_number }}</td>
+                        <td>{{ phone.phone_os }}</td>
+                        <td>{{ phone.phone_model }}</td>
+                    </tr>
+                    {% endif %}
+    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>FOB Number(s)</th>
+                        <th>Serial</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+
+    {% for fob in assigned_fobs %}
+                    {% if employee.id == fob.assigned_to %}
+                    <tr>
+                        <td>{{ fob.fob_number }}</td>
+                        <td>{{ fob.fob_serial }}</td>
+                    </tr>
+                    {% endif %}
+
+    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>iPad Serial(s)</th>
+                        <th>Model</th>
+                        <th>Storage Capacity</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+    {% for ipad in assigned_ipads %}
+                    {% if employee.id == ipad.assigned_to %}
+                    <tr>
+                        <td>{{ ipad.serial }}</td>
+                        <td>{{ ipad.model }}</td>
+                        <td>{{ ipad.storage_capacity }}</td>
+                    {% endif %}
+                    </tr>
+         
+
+    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Printer Serial(s)</th>
+                        <th>Model</th>
+                        <th>Brand</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+    {% for printer in assigned_printers %}
+                    {% if employee.id == printer.assigned_to %}
+                    <tr>
+                        <td>{{ printer.serial }}</td>
+                        <td>{{ printer.model }}</td>
+                        <td>{{ printer.brand }}</td>
+                    {% endif %}
+                    </tr>
+         
+
+    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    </body>
+</html>

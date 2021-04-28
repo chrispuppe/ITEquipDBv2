@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block title %}Edit Computer{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+    <form action="/devices/phone_edit/{{ post.id }}" method="POST">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="{{ url_for('phone_delete', id=post.id) }}">Delete</a>
+                <label>ID: {{ post.id }}</label>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <label>Phone Number:</label>
+                </div>
+                <input type="text" name="phone_number" value="{{ post.phone_number }}"></p>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <label>Phone Brand:</label>
+                </div>
+                <select type="text" name="phone_os"></p>
+                    <option {% if post.phone_os == "Android"%}{{'selected="selected"' }}{% endif %} value="Android">Android</option>
+                    <option {% if post.phone_os == "Apple"%}{{'selected="selected"' }}{% endif %} value="Apple">Apple</option>
+                    <option {% if post.phone_os == "Generic"%}{{'selected="selected"' }}{% endif %} value="Generic">Generic</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <label>Model:</label>
+                </div>
+                <input type="text" name="phone_model" value="{{ post.phone_model }}"/></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <label>Notes:</label>
+                </div>
+                <input type="text" name="notes" value="{{ post.notes }}"/></p>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <label>Assigned To:</label>
+                </div>
+                <select type="text" name="assigned_to"></p>
+
+                {% for employee in employee_list %}
+
+                    <option {% if employee.id == post.assigned_to %}{{'selected="selected"' }}{% endif %} value="{{ employee.id }}">{{ employee.name }}</option>
+
+                {% endfor %}
+
+                </select>
+            </div>
+        </div>
+        </p><button class="button postfix" type="submit">Finish</button>
+    </form>
+{% endblock %}
+{% block footer %}
+<script src="/static/js/jquery-3.1.1.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/bootstrap-datepicker.js"></script>
+<script>
+    $('.input-group.date').datepicker({
+        format: "mm/dd/yyyy",
+        autoclose: true,
+        todayHighlight: true
+    });
+</script>
+{% endblock %}

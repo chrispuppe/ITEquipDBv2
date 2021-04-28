@@ -1,0 +1,128 @@
+id,computer_name,brand,model,serial,computer_type,operating_system,notes,retired,disposed,disposed_date,aquired_date,purchase_price,vendor_id,warranty_length,employee_id,history,assigned_to
+,HQWS7,Custom,Custom,NA,Desktop,XP Pro,Chris' Office,,,,2006-02-23,,,,,,_Spare
+,HQLT11,Dell,Prec M4300,4QBSGH1,Laptop,Vista Business,Jim De John - old,,,,2008-10-09,,,,,,_Spare
+,RMLT16,Dell,Latitude D830,7RMTMG1,Laptop,XP Pro,Keep XP,,,,2008-06-25,,,,,,Sean Brown
+,HQLT26,Dell,M6400,5033JJ1,Laptop,Win 7 x64,Video heat issue - formerly at JHA,,,,2009-03-11,,,,,,_Spare
+,HQWS27,Custom x64,XP x64,NA,Desktop,XP Pro x64,Server Room,,,,2009-03-01,,,,,,FTP Server
+,HQWS29,Dell,Optiplex 755,9K7SGG1,Desktop,Win 7 x64,Brian Michaud Old - To be retired,,,,2008-06-11,,,,,,_Spare
+,HQWS31,Dell,Prec 390,60TWYC1,Desktop,XP Pro,Keep XP - QuickPen 3D Server old -Server Room,,,,2007-05-15,,,,,,_Spare
+,RMLT42,Dell,Latitude D630,0,Laptop,XP Pro,Keep XP,,,,2007-06-01,,,,,,_Service Spare
+,HQLT44,Dell,Latitude D505,0,Laptop,XP Pro,For Controls at office / Keep XP,,,,2004-06-01,,,,,,_Service Spare
+,HQWS49,Dell,XPS 800,9XY1L81,Desktop,XP Pro,Chris' Office,,,,2005-10-05,,,,,,_Kevin's old
+,RMLT52,Dell,Latitude D820,6PC3FC1,Laptop,XP Pro,"Keep XP, has 250GB SSD",,,,2007-01-25,,,,,,_Service Spare
+,HQWS53,Dell,Optiplex GX620,52YV3B1,Desktop,XP Pro,Chris' Office,,,,2006-02-23,,,,,,_Spare
+,HQLT54,Dell,Prec M4300,FCX1KH1,Laptop,Vista Ultimate,Chris' Office,,,,2008-10-09,,,,,,_Spare
+,HQWS55,Dell,Optiplex 755,7K7SGG1,Desktop,XP Pro,Chris' Office,,,,2008-06-11,,,,,,_Spare
+,HQWS57,Dell,Optiplex GX620,C23ZJ91,Desktop,XP Pro,Old Jobs Computer,,,,2006-02-23,,,,,,_Spare
+,HQWS59,Custom x64,AMD Phen 6x Cores,NA,Desktop,Win 7 x64,Chris' Office,,,,2011-01-01,,,,,,_Spare
+,HQWS65,Custom x64,AMD Phen 6x Cores,NA,Desktop,Win 7 x64,0,,,,2011-03-12,,,,,,Phil Bonney
+,HQWS66,Custom x64,AMD Phen 6x Cores,NA,Desktop,Win 7 x64,formerly at MCCA-3120 LMU,,,,2011-03-13,,,,,,_Spare
+,RMLT67,Dell,Latitude E6510,85SQ3Q1,Laptop,Win 7 x64,0,,,,2011-03-15,,,,,,Kevin White
+,HQWS68,Dell,Optiplex,1HZDDQ1,Desktop,Win 7 x64,Marc Dombrowski's Old,,,,2011-03-31,,,,,,_Spare
+,HQLT69,Dell,Latitude E6510,J1QQ3Q1,Laptop,Win 7 x64,Chris' Office - Fan noise - going out,,,,2011-04-20,,,,,,_Spare
+,HQLT70,HP,EliteBook 8540w,CND1199VKQ,Laptop,Win 7 x64,Chris Puppé - Old,,,,2011-06-15,,,,,,Jessica Nwankwo
+,HQWS71,HP,HP Z200,2UA1220Q5T,Desktop,Win 7 x64,0,,,,2011-06-29,,,,,,Tony Ceron
+,RMLT72,HP,ProBook 4530s,CNU125334G,Laptop,Win 7 x64,Eric Holguin old,,,,2011-08-12,,,,,,Lent to KM son
+,HQWS73,HP,HP Z210,2UA1361534,Desktop,Win 7 x64,Bryan Torrellas using PD3D,,,,2011-10-27,,,,,,Juan Zelada
+,HQWS74,HP,HP Compaq 6200 Pro,2UA1411545,Desktop,Win 7 x64,0,,,,2011-11-03,,,,,,Elaine Mapue
+,HQWS75,HP,HP Z210,2UA1451927,Desktop,Win 7 x64,0,,,,2011-12-06,,,,,,Lisa Omel
+,RMLT76,Dell,Latitude E5520,DCX15S1,Laptop,Win 7 x64,0,,,,2011-04-02,,,,,,Ivan Esparza
+,RMLT77,Dell,Vostro 3550,8XKNWP1,Laptop,Win 7 x64,Worn - Jeff Pumilio - Old,,,,2012-01-01,,,,,,_Spare
+,RMLT78,Dell,Vostro 3550,CWKNWP1,Laptop,Win 7 x64,Al Ioimo's old,,,,2012-01-01,,,,,,_Spare
+,HQWS79,Dell,Optiplex 390,BWYDYR1,Desktop,Win 7 x64,0,,,,2012-01-04,,,,,,Accounts Payable
+,HQWS80,Dell,Optiplex 390,BWH5YR1,Desktop,Win 7 x64,Erika Gaspar old,,,,2012-01-04,,,,,,_Accounting Spare
+,RMLT81,Dell,Vostro 3550,1DLNWP1,Laptop,Win 7 x64,Chris Abrahams old,,,,2012-01-24,,,,,,_Spare
+,HQWS82,Custom x64,AMD FX 8xCores,NA,Desktop,Win 7 x64,Random restarts,,,,2012-02-28,,,,,,_Spare
+,HQWS83,Custom x64,AMD FX 8xCores,NA,Desktop,Win 7 x64,240GB Corsair Solid State HDD,,,,2012-04-09,,,,,,Greg Evans' Desktop
+,HQLT84,Dell,Latitude E5520,DCXQ5S1,Laptop,Win 7 x64,Tom Stamm - old,,,,2013-05-02,,,,,,_Spare
+,HQLT85,Dell,Latitude E5520,DCX15X1,Laptop,Win 7 x64,0,,,,2013-01-30,,,,,,David Goytia
+,RMLT86,Lenovo,ThinkPad Edge E520,R9-LH8FH,Laptop,Win 7 x64,Mike Juran old,,,,2012-02-03,,,,,,_Spare
+,HQLT87,Dell,Latitude E5520,3RK26S1,Laptop,Win 7 x86,0,,,,2012-03-24,,,,,,Andrew Angon
+,RMLT88,Fujitsu,LifeBook  T731,Q1Z05988,Tablet PC,Win 7 x64,Broken,,,,2012-07-01,,,,,,_Spare
+,RMLT89,Fujitsu,LifeBook  T731,Q1Z05975,Tablet PC,Win 7 x64,Paul Roddy's Old,,,,2012-07-01,,,,,,Sean Brown
+,HQLT90,Dell,Precision M6500,HD2YZP1,Laptop,Win 7 x64,Brian T - borrowed,,,,2012-06-28,,,,,,_Spare
+,HQWS91,Custom,AMD FX 4xCores,NA,Desktop,Win 7 x64,Quadro k4200 Video - Card 128GB SSD - Steve Prisk's Old,,,,2012-06-28,,,,,,War Room
+,RMLT92,HP,ProBook 4530s,B817C22B3631,Laptop,Win 7 x64,0,,,,2012-07-09,,,,,,Eddie Mares
+,RMLT93,HP,ProBook 4530s,0,Laptop,Win 7 x64,0,,,,2012-07-09,,,,,,Brandon Miller
+,HQLT94,Dell,Latitude E5430,7QPWVG1,Laptop,Win 7 x64,0,,,,2012-08-23,,,,,,Bernard Johnson
+,HQLT95,Dell,Precision M6500,J8XBTN1,Laptop,Win 7 x64,Stefan Owechko - old,,,,2012-09-04,,,,,,_Spare
+,HQWS96,Dell,Optiplex 390,3GZPTV1,Desktop,Win 7 x64,Payroll - old,,,,2012-08-31,,,,,,_Accounting Spare
+,HQWS97,Dell,Optiplex 390,3FTPTV1,Desktop,Win 7 x64,AP - old  / Elaine old,,,,2012-08-31,,,,,,Brenden Michel
+,RMLT98,Dell,Latitude E5520,D1BDVV1,Laptop,Win 7 x64,E-II for KM,,,,2012-09-20,,,,,,_Spare
+,RMLT99,Lenovo,B560,0,Laptop,Win 7 x64,0,,,,2012-12-13,,,,,,Hector Serrano
+,RMLT100,Lenovo,B560,WB07439515,Laptop,Win 7 x64,Andrew Angon old - Screen issues,,,,2012-12-13,,,,,,_Spare
+,RMLT101,Lenovo,B560,WB07440560,Laptop,Win 7 x64,Shannon Andrade's old,,,,2012-12-13,,,,,,Wayne Peterson
+,RMLT102,Lenovo,B560,WB07439884,Laptop,Win 7 x64,Shawn Gibson old,,,,2012-12-13,,,,,,_Spare
+,RMLT103,2Go PC,NL3,0,Tablet PC,Win 7 x86,0,,,,2012-12-01,,,,,,Tim Brown
+,RMLT104,2Go PC,NL3,SZSEC10IS222701770,Tablet PC,Win 7 x86,Broken screen ,,,,2012-12-01,,,,,,_Spare
+,RMLT105,Lenovo,B560,WB07440767,Laptop,Win 7 x64,0,,,,2012-10-16,,,,,,Richard Gomez
+,HQWS107,Custom,AMD FX 4xCores,NA,Desktop,Win 7 x64,120GB SSD,,,,2013-01-11,,,,,,Confrence Room
+,HQLT108,Dell,Latitude E5530,83W0CW1,Laptop,Win 7 x64,Scott Harrell's old has SSD,,,,2013-01-25,,,,,,Matthew Maloney
+,RMLT109,2Go PC,NL3,0,Tablet PC,Win 7 x86,0,,,,2013-01-31,,,,,,Keith Kenndy
+,RMLT110,2Go PC,NL3,Serial:,Tablet PC,Win 7 x86,Sean Brown old,,,,2013-01-31,,,,,,_Stolen
+,HQWS111,Custom x64,Intel i7 3.6 GHz,NA,Desktop,Win 7 x64,240GB SSD,,,,2013-02-27,,,,,,Kevin Michel
+,HQWS112,Dell,Optiplex 3010,JKFQNW1,Desktop,Win 7 x64,0,,,,2013-02-28,,,,,,John Treat
+,HQWS113,HP,Pro 4300,MXL31117C7,Desktop,Win 7 x64,0,,,,2013-04-03,,,,,,Tool Manager
+,HQWS114,HP,Pro 4300,MXL31117CJ,Desktop,Win 7 x64,David Brown's old,,,,2013-04-03,,,,,,Silvia Topete
+,HQLT115,Dell,Precision M6700,4RV14X1,Laptop,Win 7 x64,Test for Trinidad,,,,2013-06-05,,,,,,_Cad Spare
+,HQLT116,HP,Spectre XT Pro,CND3210N61,Laptop,Win 7 x64,0,,,,2013-06-26,,,,,,Kevin Michel
+,HQLT117,Dell,Precision M6700,FKQTNX1,Laptop,Win 7 x64,John Haugland - old (keep),,,,2013-09-11,,,,,,John Haugland - old (keep)
+,HQLT118,Dell,Precision M6800,9MK7VZ1,Laptop,Win 7 x64,Chris' Office - KH Old  (Old M6700 CTG0CY1),,,,2013-10-30,,,,,,Kurt Hooper
+,HQWS119,Lenovo,ThinCentre Edge 72,1S3484HPU PBK87RA,Desktop,Win 7 x64,Silvia's Old Office Crashes,,,,2013-10-23,,,,,,Connor Michel
+,HQWS120,Lenovo,ThinCentre Edge 72,1S3484HPU PBK87XK,Desktop,Win 7 x64,0,,,,2013-10-23,,,,,,Fab Board
+,RMLT122,Lenovo,B590,WB0306221D,Laptop,Win 7 x64,0,,,,2013-09-27,,,,,,Angelo Snedeger
+,RMLT123,Lenovo,B590,WB12019582,Laptop,Win 7 x64,0,,,,2013-09-27,,,,,,Kyle Stangland
+,RMLT124,Lenovo,B590,WB12018188,Laptop,Win 7 x64,0,,,,2013-09-27,,,,,,Jef Moreland
+,RMLT125,Lenovo,B590,WB12019769,Laptop,Win 7 x64,Roger Loyo Old,,,,2013-09-27,,,,,,_Spare
+,RMLT126,Lenovo,B590,WB12018658,Laptop,Win 7 x64,Jason Tabbaso old,,,,2013-09-27,,,,,,_Spare
+,HQLT127,HP,ProBook 6470b,CNU335BKRZ,Laptop,Win 7 x64, (CALL 866-544-7428),,,,2013-11-29,,,,,,Ed Valenzuala
+,HQLT128,HP,ProBook 6470b,CNU335BKS9,Laptop,Win 7 x64, (CALL 866-544-7428),,,,2013-11-29,,,,,,Anthony Ioimo
+,HQLT129,HP,ProBook 6470b,CNU335BKSK,Laptop,Win 7 x64,Robbie Von Pertz old  (Service CALL 866-544-7428),,,,2013-11-29,,,,,,Roger Loyo
+,HQLT130,HP,ProBook 6470b,CNU335BKRS,Laptop,Win 7 x64, (CALL 866-544-7428),,,,2013-11-29,,,,,,Frank Borbon
+,HQLT131,HP,ProBook 6470b,CNU335BKRY,Laptop,Win 7 x64, (CALL 866-544-7428),,,,2013-11-29,,,,,,Bill Balch
+,HQLT132,HP,ProBook 6470b,CNU335BKRQ,Laptop,Win 7 x64,Lindsay Beeson - old  (CALL 866-544-7428),,,,2013-11-29,,,,,,_Shop Spare
+,HQLT133,Microsoft,Surface Pro,14471430653,Tablet PC,Windows 8.1,Troy's Surface Old,,,,2013-12-04,,,,,,_Spare
+,KEVIN-HOME-HP,HP,Elite 8300,MXL3331R7C,Desktop,Win 7 x64,Kevin's House,,,,2013-08-17,,,,,,Kevin Michel
+,HQLT135,Dell,Precision M6800,F5GQVZ1,Laptop,Win 7 x64,0,,,,2014-02-18,,,,,,James Anderson
+,HQLT136,Dell,Precision M6800,5B3FXZ1,Laptop,Win 7 x64,0,,,,2014-03-29,,,,,,Eduardo Rodriguez
+,RMLT137,Toshiba,TECRA Z50-A,3E099640H,Laptop,Win 7 x64,0,,,,2014-03-31,,,,,,Greg Evans' Laptop
+,HQWS138,Dell,Optiplex 3020,9D46202,Desktop,Win 7 x64,250GB Samsung SSD,,,,2014-05-14,,,,,,Accounts Receivable
+,HQLT139,Dell,Precision M6800,1N80F12,Laptop,Win 7 x64,Allen Bender - old,,,,2014-06-04,,,,,,_Cad Spare
+,HQLT140,HP,ProBook 430 G1,2CE4151FX1,Laptop,Win 7 x64,0,,,,2014-06-03,,,,,,Malou L - Laptop
+,HQLT141,Dell,Lattitude E7240,CV0JXZ1,Laptop,Win 7 x64,David Brown's old,,,,2014-06-23,,,,,,Juan Zelada
+,HQLT142,Dell,Precision M6700,1L5FM02,Laptop,Win 7 x64,142a SSD w/PD3D - 142 HDD w/ FAB Patrick Old,,,,2014-07-02,,,,,,Kurt Fab
+,HQWS143,Dell,Precision T3610,BRSYW12,Desktop,Win 7 x64,Steve Prisk's Old,,,,2014-06-27,,,,,,Bryan Torrellas
+,HQLT144,Dell,Latitude 5440,8ZQ5YZ1,Laptop,Win 7 x64,James Anderson - old  ssd added,,,,2014-07-03,,,,,,David Woods
+,HQLT145,Dell,Latitude 5440,92T5YZ1,Laptop,Win 7 x64,Jeff Edmiston - old,,,,2014-07-03,,,,,,Dan Bermea
+,RMLT146,HP,HP 250 G2,5CB4230JZ6,Laptop,Win 7 x64,Zach von Pertz - Old,,,,2014-08-18,,,,,,Given to Kevin's Mom
+,HQWS147,Dell,Optplex 3020,4XFMM02,Desktop,Win 7 x64,0,,,,2014-08-29,,,,,,Jason Gordon
+,HQLT148,HP,ProBook 650 G1,CNU420DJGD,Laptop,Win 7 x64,Rudy Valdez - old,,,,2014-09-08,,,,,,Chris Balch
+,HQWS149,Dell,Optplex 9020,B92PM22,Desktop,Win 7 x64,0,,,,2014-09-11,,,,,,Malou Laureano
+,RMLT150,Dell,Precision M6800,B5WNM12,Laptop,Win 7 x64,0,,,,2014-10-14,,,,,,Stefan Owechko
+,RMLT151,HP,HP 250 G2,5CB4231QWS,Laptop,Win 7 x64,0,,,,2014-10-16,,,,,,Wes Whittle
+,RMLT152,HP,HP 250 G2,5CB4231Q8R,Laptop,Win 7 x64,0,,,,2014-11-07,,,,,,Leonard Owens
+,RMLT153,HP,HP 250 G2,5CB4231QYR,Laptop,Win 7 x64,0,,,,2014-11-07,,,,,,Ray Adams
+,RMLT154,HP,HP 250 G2,5CB4231R6P,Laptop,Win 7 x64,Keith Finney old,,,,2014-11-07,,,,,,Jesse Gaytan
+,RMLT155,Acer,Travel Mate P,NXV7QAA017426172413400,Laptop,Win 7 x64,0,,,,2014-11-10,,,,,,Frank Borbon Moblie
+,RMLT156,Acer,Travel Mate P,NXV7QAA0174261C8EF3400,Laptop,Win 7 x64,0,,,,2014-11-10,,,,,,Alex Molina
+,HQLT157,Dell,Lattitude E7240,F7CCK12,Laptop,Win 7 x64,512 SSD,,,,2014-12-02,,,,,,Scott Burson
+,RMLT158,HP,HP 250 G3,CND424BKVM,Laptop,Win 7 x64,TJ Galazzo old,,,,2014-12-16,,,,,,_Spare
+,RMLT159,HP,HP 250 G3,CND424BLRT,Laptop,Win 7 x64,Zach von Pertz - Old,,,,2014-12-16,,,,,,_Stolen
+,RMLT160,HP,HP 250 G3,CND424BPKP,Laptop,Win 7 x64,Dagmawi - old,,,,2014-12-16,,,,,,Jason Zadorian
+,RMLT161,HP,HP 250 G3,CND424BD4F,Laptop,Win 7 x64,Richard Holguin old,,,,2014-12-17,,,,,,Richard Holguin
+,HQLT162,Dell,Precision M2800,5KCBL32,Laptop,Win 7 x64,Jake Old,,,,2015-03-02,,,,,,Christopher Puppé
+,HQLT163,Dell,Precision M6800,J96PN32,Laptop,Win 7 x64,0,,,,2015-02-23,,,,,,Trinadad Melendrez
+,HQWS164,Dell,Optiplex 3020,D38HS22,Desktop,Win 7 x64,0,,,,2015-03-16,,,,,,Elaine Mapue
+,HQWS165,Dell,Optiplex 3020,6BPHS22,Desktop,Win 7 x64,0,,,,2015-03-16,,,,,,Joven Aguas
+,HQWS166,Dell,Optiplex 3020,D3BKS22,Desktop,Win 7 x64,0,,,,2015-03-16,,,,,,Mike Holt
+,HQLT167,Dell,Precision M2800,8JNNM32,Laptop,Win 7 x64,0,,,,2015-05-02,,,,,,Joseph Camacho
+,RMLT168,HP,HP Probook 450 G4,5CD6385JSN,Laptop,Win 10 x64,0,,,,2016-11-03,,,,,,Mike DeFrancis
+,HQLT169,HP,HP Probook 840 G3,5CG6404P16,Laptop,Win 7 x64,0,,,,2016-12-06,,,,,,Steve Prisk
+,RMLT170,HP,HP EliteBook 725 G2,5CG5377N2D,Laptop,Win 10 x64,0,,,,2017-02-10,,,,,,Levi Le Blanc
+,HQWS171,HP,HP EliteDesk 800 G2,MXL6362NQB,Desktop,Win 7 x64,0,,,,2017-04-19,,,,,,Payroll
+,HQWS172,HP,HP EliteDesk 800 G2,MXL7031HG4,Desktop,Win 7 x64,0,,,,2017-05-09,,,,,,_Spare Estimating
+,HQWS173,HP,HP EliteDesk 800 G2,MXL7031HBM,Desktop,Win 7 x64,0,,,,2017-05-09,,,,,,Brian Michaud
+,RMLT174,HP,EliteBook Folio G1,5CG6503XHH,Laptop,Win 10 x64,0,,,,2017-07-25,,,,,,Keith Kenndy
+,RMLT175,HP,EliteBook Folio G1,5CG6440MG9,Laptop,Win 10 x64,0,,,,2017-07-25,,,,,,Sean Brown
+,RMLT176,HP,EliteBook Folio G1,5CG65067PY,Laptop,Win 10 x64,0,,,,2017-07-25,,,,,,Tim Brown
+,HQLT177,HP,EliteBook x360 1030 G2,0,Laptop,0,0,,,,2017-08-04,,,,,,Jason Gordon
