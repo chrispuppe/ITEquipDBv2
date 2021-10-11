@@ -9,6 +9,9 @@ from wtforms.validators import InputRequired, Email, Length, EqualTo
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.sql import exists
 import pdfkit
+#path_wkhtmltopdf = '/home/cpuppe/Desktop/ITDBv2/venv/lib/python3.6/site-packages/wkhtmltopdf'
+#pdfkit_config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
+
 
 
 # validation and str to date for input
@@ -370,8 +373,8 @@ def employee_report_pdf(id):
                             assigned_ipads=assigned_ipads,
                             assigned_printers=assigned_printers)
 
-    css = ['app/static/css/bootstrap.css']
-    pdf_report = pdfkit.from_string(rendered_report, False, css=css)
+    css = 'app/static/css/bootstrap.css'
+    pdf_report = pdfkit.from_string(rendered_report, False, css=css)#, configuration=pdfkit_config)
 
     pdf_response = make_response(pdf_report)
     pdf_response.headers['Content-type'] = 'application/pdf'
