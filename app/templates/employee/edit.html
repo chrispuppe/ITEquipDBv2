@@ -4,7 +4,7 @@
 {{ super() }}
 {% endblock %}
 {% block content %}
-		<form action="/employee/edit/{{ post.id }}" method="POST">
+		<form action="/employee/edit/{{ post.selected_employee_id }}" method="POST">
 			<div class="row">
 				<div class="col-md-4">
 					<a href="{{ url_for('delete_employee', id=post.id) }}">Delete</a>
