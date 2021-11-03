@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
-
 # Create an Instance of Flask
 app = Flask(__name__)
 # Include config from config.py
