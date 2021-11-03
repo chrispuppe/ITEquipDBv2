@@ -166,8 +166,8 @@ def user_add():
 
 @app.route('/edit_user/<int:id>', methods=['GET', 'POST'])
 @login_required
-def user_edit(selected_user_id):
-    user = models.User.query.get(selected_user_id)
+def user_edit(id):
+    user = models.User.query.get(id)
     form = RegisterForm(obj=user)
 
     if request.method == 'POST':
@@ -186,8 +186,8 @@ def user_edit(selected_user_id):
 
 @app.route('/edit_user_password/<int:id>', methods=['GET', 'POST'])
 @login_required
-def user_edit_password(selected_user_id):
-    user = models.User.query.get(selected_user_id)
+def user_edit_password(id):
+    user = models.User.query.get(id)
 
     form = RegisterForm(obj=user)
 
@@ -211,8 +211,8 @@ def user_edit_password(selected_user_id):
 
 @app.route('/delete_user/<int:id>', methods=['GET', 'POST'])
 @login_required
-def user_delete(selected_user_id):
-    user = models.User.query.get(selected_user_id)
+def user_delete(id):
+    user = models.User.query.get(id)
     db.session.delete(user)
     db.session.commit()
     flash('deleted')
@@ -262,12 +262,12 @@ def employee_add():
 
 @app.route('/employee/edit/<int:id>', methods=['POST', 'GET'])
 @login_required
-def edit_employee(selected_employee_id):
+def edit_employee(id):
     # Getting user by primary key:
     # Validate url to ensure id exists
-    post = models.Employee.query.get(selected_employee_id)
+    post = models.Employee.query.get(id)
     if not post:
-        flash('Invalid post id: {0}'.format(selected_employee_id))
+        flash('Invalid post id: {0}'.format(id))
         return redirect(url_for('index'))
 
     # raise exception
@@ -288,10 +288,10 @@ def edit_employee(selected_employee_id):
 
 @app.route('/employee/delete/<id>', methods=['POST', 'GET'])
 @login_required
-def delete_employee(selected_employee_id):
-    employee = models.Employee.query.get(selected_employee_id)
+def delete_employee(id):
+    employee = models.Employee.query.get(id)
     if not employee:
-        flash('Invalid employee id: {0}'.format(selected_employee_id))
+        flash('Invalid employee id: {0}'.format(id))
         return redirect(url_for('index'))
 
     error = None
@@ -326,12 +326,12 @@ def delete_employee(selected_employee_id):
 
 @app.route('/employee/report/<int:id>', methods=['POST', 'GET'])
 @login_required
-def employee_report(selected_employee_id):
+def employee_report(id):
     # Getting user by primary key:
     # Validate url to ensure id exists
-    employee = models.Employee.query.get(selected_employee_id)
+    employee = models.Employee.query.get(id)
     if not employee:
-        flash('Invalid employee id: {0}'.format(selected_employee_id))
+        flash('Invalid employee id: {0}'.format(id))
         return redirect(url_for('index'))
     # get device tables to get all user assigned items
     assigned_computers = models.Computers.query.all()
@@ -353,12 +353,12 @@ def employee_report(selected_employee_id):
 
 @app.route('/report/pdf/<int:id>', methods=['POST', 'GET'])
 @login_required
-def employee_report_pdf(selected_employee_id):
+def employee_report_pdf(id):
     # Getting user by primary key:
     # Validate url to ensure id exists
-    employee = models.Employee.query.get(selected_employee_id)
+    employee = models.Employee.query.get(id)
     if not employee:
-        flash('Invalid employee id: {0}'.format(selected_employee_id))
+        flash('Invalid employee id: {0}'.format(id))
         return redirect(url_for('index'))
     # get device tables to get all user assigned items
     assigned_computers = models.Computers.query.all()
@@ -420,14 +420,14 @@ def computer_add():
 
 @app.route('/devices/computer_edit/<int:id>', methods=['POST', 'GET'])
 @login_required
-def computer_edit(selected_computer_id):
+def computer_edit(id):
     # new employee list for form
     employee_list = fresh_employee_list()
 
     # Validate url to ensure id exists
-    post = models.Computers.query.get(selected_computer_id)
+    post = models.Computers.query.get(id)
     if not post:
-        flash('Invalid post id: {0}'.format(selected_computer_id))
+        flash('Invalid post id: {0}'.format(id))
         return redirect(url_for('index'))
 
     # raise exception
@@ -456,8 +456,8 @@ def computer_edit(selected_computer_id):
 
 @app.route('/devices/computer_delete/<id>', methods=['POST', 'GET'])
 @login_required
-def delete_computer(selected_computer_id):
-    post = models.Computers.query.get(selected_computer_id)
+def delete_computer(id):
+    post = models.Computers.query.get(id)
     db.session.delete(post)
     db.session.commit()
     flash('deleted')
@@ -495,14 +495,14 @@ def phone_add():
 
 @app.route('/devices/phone_edit/<int:id>', methods=['POST', 'GET'])
 @login_required
-def phone_edit(selected_phone_id):
+def phone_edit(id):
     # new employee list for form
     employee_list = fresh_employee_list()
 
     # Validate url to ensure id exists
-    post = models.Phone_Account.query.get(selected_phone_id)
+    post = models.Phone_Account.query.get(id)
     if not post:
-        flash('Invalid post id: {0}'.format(selected_phone_id))
+        flash('Invalid post id: {0}'.format(id))
         return redirect(url_for('index'))
 
     # raise exception
@@ -524,8 +524,8 @@ def phone_edit(selected_phone_id):
 
 @app.route('/devices/phone_delete/<id>', methods=['POST', 'GET'])
 @login_required
-def phone_delete(selected_phone_id):
-    post = models.Phone_Account.query.get(selected_phone_id)
+def phone_delete(id):
+    post = models.Phone_Account.query.get(id)
     db.session.delete(post)
     db.session.commit()
     flash('deleted')
@@ -560,14 +560,14 @@ def fob_add():
 
 @app.route('/devices/fob_edit/<int:id>', methods=['POST', 'GET'])
 @login_required
-def fob_edit(selected_fob_id):
+def fob_edit(id):
     # new employee list for form
     employee_list = fresh_employee_list()
 
     # Validate url to ensure id exists
-    post = models.Fob.query.get(selected_fob_id)
+    post = models.Fob.query.get(id)
     if not post:
-        flash('Invalid post id: {0}'.format(selected_fob_id))
+        flash('Invalid post id: {0}'.format(id))
         return redirect(url_for('index'))
 
     # raise exception
@@ -587,8 +587,8 @@ def fob_edit(selected_fob_id):
 
 @app.route('/devices/fob_delete/<id>', methods=['POST', 'GET'])
 @login_required
-def fob_delete(selected_fob_id):
-    post = models.Fob.query.get(selected_fob_id)
+def fob_delete(id):
+    post = models.Fob.query.get(id)
     db.session.delete(post)
     db.session.commit()
     flash('deleted')
@@ -624,14 +624,14 @@ def ipad_add():
 
 @app.route('/devices/ipad_edit/<int:id>', methods=['POST', 'GET'])
 @login_required
-def ipad_edit(selected_tablet_id):
+def ipad_edit(id):
     # new employee list for form
     employee_list = fresh_employee_list()
 
     # Validate url to ensure id exists
-    post = models.Ipads.query.get(selected_tablet_id)
+    post = models.Ipads.query.get(id)
     if not post:
-        flash('Invalid post id: {0}'.format(selected_tablet_id))
+        flash('Invalid post id: {0}'.format(id))
         return redirect(url_for('index'))
 
     # raise exception
@@ -653,8 +653,8 @@ def ipad_edit(selected_tablet_id):
 
 @app.route('/devices/ipad_delete/<id>', methods=['POST', 'GET'])
 @login_required
-def ipad_delete(selected_tablet_id):
-    post = models.Ipads.query.get(selected_tablet_id)
+def ipad_delete(id):
+    post = models.Ipads.query.get(id)
     db.session.delete(post)
     db.session.commit()
     flash('deleted')
@@ -693,14 +693,14 @@ def printer_add():
 
 @app.route('/devices/printer_edit/<int:id>', methods=['POST', 'GET'])
 @login_required
-def printer_edit(selected_printer_id):
+def printer_edit(id):
     # new employee list for form
     employee_list = fresh_employee_list()
 
     # Validate url to ensure id exists
-    post = models.Printers.query.get(selected_printer_id)
+    post = models.Printers.query.get(id)
     if not post:
-        flash('Invalid post id: {0}'.format(selected_printer_id))
+        flash('Invalid post id: {0}'.format(id))
         return redirect(url_for('index'))
 
     # raise exception
@@ -723,8 +723,8 @@ def printer_edit(selected_printer_id):
 
 @app.route('/devices/printer_delete/<int:id>', methods=['POST', 'GET'])
 @login_required
-def printer_delete(selected_printer_id):
-    post = models.Printers.query.get(selected_printer_id)
+def printer_delete(id):
+    post = models.Printers.query.get(id)
     db.session.delete(post)
     db.session.commit()
     flash('deleted')

@@ -31,10 +31,10 @@
                     {% for post in post %}
 
                     <tr>
-                        <td><a href="{{ url_for('edit_employee', selected_employee_id=post.id) }}">{{ post.name }}</a></td>
+                        <td><a href="{{ url_for('edit_employee', id=post.id) }}">{{ post.name }}</a></td>
                         <td>{{ post.trade }}</td>
                         <td>{{ post.email_address }}</td>
-                        <td><a href="{{ url_for('employee_report', selected_employee_id=post.id) }}">Assigned</a></td>
+                        <td><a href="{{ url_for('employee_report', id=post.id) }}">Assigned</a></td>
                     </tr>
 
                     {% endfor %}
