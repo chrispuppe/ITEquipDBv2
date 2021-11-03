@@ -1,8 +1,8 @@
 from app import db
-from sqlalchemy.dialects.mysql import BOOLEAN
 from sqlalchemy import ForeignKey
 import datetime
 from flask_login import UserMixin
+
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -10,10 +10,10 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(50), unique=True)
     password = db.Column(db.String(80))
 
+
 class Employee(db.Model):
     __tablename__ = 'employee'
-
-    id = db.Column(db.Integer,unique=True, primary_key=True)
+    id = db.Column(db.Integer, unique=True, primary_key=True)
     name = db.Column(db.String(255))
     create_ts = db.Column(db.DateTime)
     skill_level = db.Column(db.Integer)
@@ -22,20 +22,19 @@ class Employee(db.Model):
     inactive = db.Column(db.BOOLEAN(), default=False, nullable=False)
 
     def __init__(self, name, skill_level, email_address, trade):
-    	self.name = name
-    	self.create_ts = datetime.datetime.now()
-    	self.skill_level = skill_level
-    	self.email_address = email_address
-    	self.trade = trade
+        self.name = name
+        self.create_ts = datetime.datetime.now()
+        self.skill_level = skill_level
+        self.email_address = email_address
+        self.trade = trade
 
  
 # Super class for all devices so they can all be called at once.
 class Device(db.Model):
     __tablename__ = 'device'
     id = db.Column(db.Integer, primary_key=True)
-    #assigned_to = db.Column(db.Integer, ForeignKey('employee.id'))
-    
-    __maper_args__ = {'polymorphic_identity':'device'}
+
+    __maper_args__ = {'polymorphic_identity': 'device'}
     
 
 class Ipads(Device):
@@ -69,7 +68,6 @@ class Fob(Device):
         self.fob_number = fob_number
         self.fob_serial = fob_serial
         self.assigned_to = assigned_to
-
 
 
 class Computers(Device):
