@@ -119,9 +119,6 @@ def signup():
 
         return redirect(url_for('login'))
 
-    else:
-        pass
-
     return render_template('signup.html', form=form)
 
 
@@ -153,9 +150,6 @@ def user_add():
         db.session.commit()
 
         return redirect(url_for('user_admin'))
-
-    else:
-        pass
 
     return render_template('user_add.html', form=form)
 
@@ -198,9 +192,6 @@ def user_edit_password(id):
         db.session.commit()
 
         return redirect(url_for('user_admin'))
-
-    else:
-        pass
 
     return render_template('user_edit_password.html', form=form, user=user)
 
@@ -254,9 +245,6 @@ def employee_add():
         db.session.add(post)
         db.session.commit()
 
-    else:
-        pass
-
     return render_template('employee/add.html')
 
 
@@ -271,19 +259,15 @@ def edit_employee(id):
         return redirect(url_for('index'))
 
     # raise exception
-    if request.method == 'POST':
-        post.name = request.form.get('name_form')
-        post.skill_level = request.form['skill_level_form']
-        post.email_address = request.form['email_address_form']
-        post.trade = request.form['trade_form']
-        if 'inactive' in request.form:
-            post.inactive = True
-        else:
-            post.inactive = False
-        db.session.commit()
-        return redirect(url_for('index'))
-    else:
+    if request.method != 'POST':
         return render_template('employee/edit.html', post=post)
+    post.name = request.form.get('name_form')
+    post.skill_level = request.form['skill_level_form']
+    post.email_address = request.form['email_address_form']
+    post.trade = request.form['trade_form']
+    post.inactive = 'inactive' in request.form
+    db.session.commit()
+    return redirect(url_for('index'))
 
 
 @app.route('/employee/delete/<id>', methods=['POST', 'GET'])
@@ -431,27 +415,26 @@ def computer_edit(id):
         return redirect(url_for('index'))
 
     # raise exception
-    if request.method == 'POST':
-        # raise exception
-
-        post.computer_name = request.form.get('computer_name')
-        post.brand = request.form['brand']
-        post.model = request.form['model']
-        post.serial = request.form['serial']
-        post.computer_type = request.form['computer_type']
-        post.operating_system = request.form['operating_system']
-        post.notes = request.form['notes']
-        post.aquired_date = string_to_date(request.form['aquired_date'])
-        post.purchase_price = request.form['purchase_price']
-        post.vendor_id = request.form['vendor_id']
-        post.warranty_length = request.form['warranty_length']
-        post.assigned_to = request.form['assigned_to']
-
-        db.session.commit()
-        return redirect(url_for('all_computers'))
-    else:
+    if request.method != 'POST':
         return render_template('devices/computer_edit.html', employee_list=employee_list,
                                post=post)
+    # raise exception
+
+    post.computer_name = request.form.get('computer_name')
+    post.brand = request.form['brand']
+    post.model = request.form['model']
+    post.serial = request.form['serial']
+    post.computer_type = request.form['computer_type']
+    post.operating_system = request.form['operating_system']
+    post.notes = request.form['notes']
+    post.aquired_date = string_to_date(request.form['aquired_date'])
+    post.purchase_price = request.form['purchase_price']
+    post.vendor_id = request.form['vendor_id']
+    post.warranty_length = request.form['warranty_length']
+    post.assigned_to = request.form['assigned_to']
+
+    db.session.commit()
+    return redirect(url_for('all_computers'))
 
 
 @app.route('/devices/computer_delete/<id>', methods=['POST', 'GET'])
@@ -506,20 +489,19 @@ def phone_edit(id):
         return redirect(url_for('index'))
 
     # raise exception
-    if request.method == 'POST':
-        # raise exception
-
-        post.phone_number = request.form['phone_number']
-        post.phone_model = request.form['phone_model']
-        post.phone_os = request.form['phone_os']
-        post.notes = request.form['notes']
-        post.assigned_to = request.form['assigned_to']
-
-        db.session.commit()
-        return redirect(url_for('all_phones'))
-    else:
+    if request.method != 'POST':
         return render_template('devices/phone_edit.html', employee_list=employee_list,
                                post=post)
+    # raise exception
+
+    post.phone_number = request.form['phone_number']
+    post.phone_model = request.form['phone_model']
+    post.phone_os = request.form['phone_os']
+    post.notes = request.form['notes']
+    post.assigned_to = request.form['assigned_to']
+
+    db.session.commit()
+    return redirect(url_for('all_phones'))
 
 
 @app.route('/devices/phone_delete/<id>', methods=['POST', 'GET'])
@@ -571,18 +553,17 @@ def fob_edit(id):
         return redirect(url_for('index'))
 
     # raise exception
-    if request.method == 'POST':
-        # raise exception
-
-        post.fob_number = request.form['fob_number']
-        post.fob_serial = request.form['fob_serial']
-        post.assigned_to = request.form['assigned_to']
-
-        db.session.commit()
-        return redirect(url_for('all_fobs'))
-    else:
+    if request.method != 'POST':
         return render_template('devices/fob_edit.html', employee_list=employee_list,
                                post=post)
+    # raise exception
+
+    post.fob_number = request.form['fob_number']
+    post.fob_serial = request.form['fob_serial']
+    post.assigned_to = request.form['assigned_to']
+
+    db.session.commit()
+    return redirect(url_for('all_fobs'))
 
 
 @app.route('/devices/fob_delete/<id>', methods=['POST', 'GET'])
@@ -635,20 +616,19 @@ def ipad_edit(id):
         return redirect(url_for('index'))
 
     # raise exception
-    if request.method == 'POST':
-        # raise exception
-
-        post.serial = request.form['serial']
-        post.model = request.form['model']
-        post.storage_capacity = request.form['storage_capacity']
-        post.date_purchased = string_to_date(request.form['date_purchased'])
-        post.assigned_to = request.form['assigned_to']
-
-        db.session.commit()
-        return redirect(url_for('all_ipads'))
-    else:
+    if request.method != 'POST':
         return render_template('devices/ipad_edit.html', employee_list=employee_list,
                                post=post)
+    # raise exception
+
+    post.serial = request.form['serial']
+    post.model = request.form['model']
+    post.storage_capacity = request.form['storage_capacity']
+    post.date_purchased = string_to_date(request.form['date_purchased'])
+    post.assigned_to = request.form['assigned_to']
+
+    db.session.commit()
+    return redirect(url_for('all_ipads'))
 
 
 @app.route('/devices/ipad_delete/<id>', methods=['POST', 'GET'])
@@ -686,8 +666,6 @@ def printer_add():
         )
         db.session.add(post)
         db.session.commit()
-    else:
-        pass
     return render_template('devices/printer_add.html', employee_list=employee_list)
 
 
@@ -704,21 +682,20 @@ def printer_edit(id):
         return redirect(url_for('index'))
 
     # raise exception
-    if request.method == 'POST':
-        # raise exception
-
-        post.brand = request.form['brand']
-        post.model = request.form['model']
-        post.printer_type = request.form['printer_type']
-        post.aquired_date = string_to_date(request.form['aquired_date'])
-        post.vendor_id = request.form['vendor_id']
-        post.assigned_to = request.form['assigned_to']
-
-        db.session.commit()
-        return redirect(url_for('all_printers'))
-    else:
+    if request.method != 'POST':
         return render_template('devices/printer_edit.html', employee_list=employee_list,
                                post=post)
+    # raise exception
+
+    post.brand = request.form['brand']
+    post.model = request.form['model']
+    post.printer_type = request.form['printer_type']
+    post.aquired_date = string_to_date(request.form['aquired_date'])
+    post.vendor_id = request.form['vendor_id']
+    post.assigned_to = request.form['assigned_to']
+
+    db.session.commit()
+    return redirect(url_for('all_printers'))
 
 
 @app.route('/devices/printer_delete/<int:id>', methods=['POST', 'GET'])
