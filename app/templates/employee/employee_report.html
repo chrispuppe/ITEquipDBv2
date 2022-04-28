@@ -12,7 +12,7 @@
         {% endif %}
         <div class="btn-group pull-right" role="group" aria-label="...">
             <div class="btn-group" role="group">
-                <a role="button" class="btn btn-success"  href="{{ url_for('employee_report_pdf', id=employee.id) }}">PDF</a>
+                <a role="button" class="btn btn-success" target="_blank" href="{{ url_for('employee_report_pdf', id=employee.id) }}">PDF</a>
             </div>
         </div>
         <h2 class="sub-header">User Report for {{ employee.name }}</h2>
