@@ -15,7 +15,8 @@ import pdfkit
 def string_to_date(d_string):
     try:
         new_date = datetime.strptime(d_string, '%m/%d/%Y')
-    except:
+    except ValueError as e:
+        print(e)
         new_date = datetime.now().date()
     return new_date
 
