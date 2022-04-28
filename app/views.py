@@ -359,8 +359,8 @@ def employee_report_pdf(id):
                                             assigned_printers=assigned_printers)
 
     css = 'app/static/css/bootstrap.css'
-    pdfkit_config = pdfkit.configuration(wkhtmltopdf='/venv/lib/python3.6/site-packages/wkhtmltopdf/')
-    pdf_report = pdfkit.from_string(rendered_report, False, css=css, verbose=True, configuration=pdfkit_config)
+    # pdfkit_config = pdfkit.configuration(wkhtmltopdf='/venv/lib/python3.6/site-packages/wkhtmltopdf/')
+    pdf_report = pdfkit.from_string(rendered_report, False, css=css, verbose=True) #, configuration=pdfkit_config)
 
     pdf_response = flask.make_response(pdf_report)
     pdf_response.headers['Content-type'] = 'application/pdf'
