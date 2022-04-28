@@ -279,8 +279,6 @@ def delete_employee(id):
         flask.flash('Invalid employee id: {0}'.format(id))
         return flask.redirect(flask.url_for('index'))
 
-    error = None
-
     device_list = db.session.query(exists().where(models.Device.assigned_to == id))
     # Redirects to employee report if the employee has devices assigned to them
     if device_list.scalar():
