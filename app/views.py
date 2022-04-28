@@ -364,7 +364,7 @@ def employee_report_pdf(id):
 
     pdf_response = flask.make_response(pdf_report)
     pdf_response.headers['Content-type'] = 'application/pdf'
-    pdf_response.headers['Content-Disposition'] = 'attachment; {}.pdf'.format(employee.name)
+    pdf_response.headers['Content-Disposition'] = f'inline; {employee.name}.pdf'
 
     return pdf_response
 
