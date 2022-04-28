@@ -11,7 +11,6 @@ from sqlalchemy.sql import exists
 import pdfkit
 
 
-
 # validation and str to date for input
 def string_to_date(d_string):
     try:
@@ -359,11 +358,11 @@ def employee_report_pdf(id):
                                             assigned_printers=assigned_printers)
 
     css = 'app/static/css/bootstrap.css'
-
+    pdf_timestamp = datetime.now()
     pdf_report = pdfkit.from_string(rendered_report, False, css=css)
     pdf_response = flask.make_response(pdf_report)
     pdf_response.headers['Content-type'] = 'application/pdf'
-    pdf_response.headers['Content-Disposition'] = f'inline; filename={employee.name}.pdf'
+    pdf_response.headers['Content-Disposition'] = f'inline; filename={employee.name}_{pdf_timestamp}.pdf'
 
     return pdf_response
 
