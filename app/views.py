@@ -358,7 +358,7 @@ def employee_report_pdf(id):
                                             assigned_printers=assigned_printers)
 
     css = 'app/static/css/bootstrap.css'
-    pdf_timestamp = datetime.now()
+    pdf_timestamp = datetime.now().date()
     pdf_report = pdfkit.from_string(rendered_report, False, css=css)
     pdf_response = flask.make_response(pdf_report)
     pdf_response.headers['Content-type'] = 'application/pdf'
